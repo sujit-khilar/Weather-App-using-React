@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import "./Weather.css";
+import clear from "../asset/image/clear.png";
+import clouds from "../asset/image/clouds.png";
+import drizzle from "../asset/image/drizzle.png";
+import humidity from "../asset/image/humidity.png";
+import wind from "../asset/image/wind.png";
+import image1 from "../asset/image/search.png";
+import rain from "../asset/image/rain.png";
+import snow from "../asset/image/snow.png";
 
 const Weather = () => {
 
    let api_key= "2d9e341c8244755d47569771b73df3f7";
 
-   const [wicon, setWicon] = useState("/public/image/clouds.png");
+   const [wicon, setWicon] = useState(clouds);
 
    
    
@@ -31,27 +39,27 @@ const Weather = () => {
       location[0].innerHTML = data.name;
 
       if(data.weather[0].icon === "01d" || data.weather[0].icon === "01n"){
-         setWicon("/public/image/clear.png");
+         setWicon(clear);
       }
       else if(data.weather[0].icon === "02d" || data.weather[0].icon === "02n"){
-         setWicon("/public/image/clouds.png")
+         setWicon(clouds)
       }
       else if(data.weather[0].icon === "03d" || data.weather[0].icon === "03n"){
-         setWicon("/public/image/drizzle.png")
+         setWicon(drizzle)
       }
       else if(data.weather[0].icon === "04d" || data.weather[0].icon === "04n"){
-         setWicon("/public/image/drizzle.png")
+         setWicon(drizzle)
       }
       else if(data.weather[0].icon === "09d" || data.weather[0].icon === "09n"){
-         setWicon("/public/image/rain.png")
+         setWicon(rain)
       }
       else if(data.weather[0].icon === "10d" || data.weather[0].icon === "10n"){
-         setWicon("/public/image/rain.png")
+         setWicon(rain)
       }
       else if(data.weather[0].icon === "13d" || data.weather[0].icon === "13n"){
-         setWicon("/public/image/snow.png")
+         setWicon(snow)
       }else{
-         setWicon("/public/image/clear.png")
+         setWicon(clear)
       }
    }
 
@@ -61,7 +69,7 @@ const Weather = () => {
             <div className="top-bar">
                <input type="text" className="cityInput" placeholder='Search' />
                <div className="search_icon" onClick={()=>{search()}}>
-                  <img src={"/public/image/search.png"} alt="" />
+                  <img src={image1} alt="" />
                </div>
             </div>
             <div className="weather-image">
@@ -71,14 +79,14 @@ const Weather = () => {
             <div className="weather-location">Enter city</div>
             <div className="data-container">
                <div className="element">
-                  <img src={"/public/image/humidity.png"} alt="" className="icon" />
+                  <img src={humidity} alt="" className="icon" />
                   <div className="data">
                      <div className="humidity-percent"></div>
                      <div className="text">Humidity</div>
                   </div>
                </div>
                <div className="element">
-                  <img src={"/public/image/wind.png"} alt="" className="icon" />
+                  <img src={wind} alt="" className="icon" />
                   <div className="data">
                      <div className="wind-rate"></div>
                      <div className="text">Wind Speed</div>
