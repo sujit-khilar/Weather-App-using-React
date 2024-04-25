@@ -76,7 +76,7 @@ const Weather = () => {
                <img src={wicon} alt="" />
             </div>
             <div className="weather-temp"></div>
-            <div className="weather-location">Enter city</div>
+            <div className="weather-location">"Hey, there! </div>
             <div className="data-container">
                <div className="element">
                   <img src={humidity} alt="" className="icon" />
